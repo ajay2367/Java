@@ -12,7 +12,7 @@ public class RideRequest {
     private final LocalDateTime requestTime;
     private RequestStatus status;
 
-    public RideRequest(int requestId, LocalDateTime requestTime, User user, Location pickupLocation, Location destinationLocation, RequestStatus status) {
+    public RideRequest(int requestId, User user, Location pickupLocation, Location destinationLocation, RequestStatus status) {
         this.requestId = requestId;
         this.user = user;
         this.pickupLocation = pickupLocation;
