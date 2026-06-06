@@ -17,7 +17,6 @@ public class Ride {
         this.rideId = rideId;
         this.rideRequest = rideRequest;
         this.user =rideRequest.getUser() ;
-        this.status = status;
         this.driver = driver;
         this.status = RideStatus.DRIVER_ASSIGNED;
         this.createdTime = LocalDateTime.now();
