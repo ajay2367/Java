@@ -9,9 +9,9 @@ public class User {
     private final String name;
     private final Gender gender;
     private UserStatus status;
-    private Location currentLocation;
+    private models.Location currentLocation;
 
-    public User(int userId, String name, Gender gender, UserStatus status, Location currentLocation) {
+    public User(int userId, String name, Gender gender, UserStatus status, models.Location currentLocation) {
         this.userId = userId;
         this.name = name;
         this.gender = gender;
@@ -39,11 +39,11 @@ public class User {
         this.status = status;
     }
 
-    public Location getCurrentLocation() {
+    public models.Location getCurrentLocation() {
         return currentLocation;
     }
 
-    public void setCurrentLocation(Location currentLocation) {
+    public void setCurrentLocation(models.Location currentLocation) {
         this.currentLocation = currentLocation;
     }
 
