@@ -10,7 +10,7 @@ public class Driver {
     private DriverStatus status;
     private double rating;
 
-    public Driver(Gender gender, Location currentLocation, int driverId, String name, DriverStatus status, double rating) {
+    public Driver(int driverId,String name, Gender gender, Location currentLocation, DriverStatus status, double rating) {
         this.gender = gender;
         this.currentLocation = currentLocation;
         this.driverId = driverId;
