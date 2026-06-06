@@ -13,12 +13,12 @@ public class Ride {
     private LocalDateTime completedTime;
     private double fare;
 
-    public Ride(int rideId, RideRequest rideRequest, RideStatus status, Driver driver) {
+    public Ride(int rideId, RideRequest rideRequest, Driver driver) {
         this.rideId = rideId;
         this.rideRequest = rideRequest;
         this.user =rideRequest.getUser() ;
         this.driver = driver;
-        this.status = RideStatus.DRIVER_ASSIGNED;
+        this.status = RideStatus.CREATED;
         this.createdTime = LocalDateTime.now();
     }
 

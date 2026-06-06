@@ -2,9 +2,11 @@ package service;
 import models.Driver;
 import enums.DriverStatus;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class DriverManager {
     private final ConcurrentHashMap<Integer, Driver> drivers;
+    private final ReentrantLock driverAssignmentLock = new ReentrantLock();
 
     public DriverManager() {
         this.drivers = new ConcurrentHashMap<>();
@@ -34,5 +36,20 @@ public class DriverManager {
 
      public int getTotalDrivers() {
         return drivers.size();
+     }
+
+     public Driver assignAvailableDriver() {
+        driverAssignmentLock.lock();
+        try {
+            for(Driver driver : drivers.values()) {
+                if(driver.getStatus() == DriverStatus.AVAILABLE) {
+                    driver.setStatus(DriverStatus.BUSY);
+                    return driver;
+                }
+            }
+            return null;
+        } finally {
+            driverAssignmentLock.unlock();
+        }
      }
 }
