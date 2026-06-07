@@ -35,7 +35,7 @@ public class Main {
                 "Total Drivers Loaded : "
                         + driverManager.getTotalDrivers()
         );
-        ExecutorService rideExecutor = Executors.newFixedThreadPool(50);
+        ExecutorService rideExecutor = Executors.newFixedThreadPool(100);
         for(int i=1;i<=5;i++) {
             Thread matcherThread = new Thread(
                     new RideMatcherTask(rideRequestQueue,driverManager,rideExecutor,rideManager),
@@ -73,7 +73,7 @@ public class Main {
                 "All ride requests submitted."
         );
 
-        Thread.sleep(30000);
+        Thread.sleep(300000);
 
         System.out.println(
                 "Simulation Completed"

@@ -6,7 +6,7 @@ public class Driver {
     private final int driverId;
     private final String name;
     private final Gender gender;
-    private Location currentLocation;
+    private models.Location currentLocation;
     private DriverStatus status;
     private double rating;
 
